@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(121, 121, 121, 0.9);
+    font-family: 'Lato', sans-serif;
+}
+
+.background-image {
+    position: fixed;
+    width: 100vw;
+    background-image: url("img/header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: contain;
+    opacity: 0.2;
+    min-height: 100vh;
+    filter: blur(2px);
+}
+
+.container {
+    position: absolute;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.container header {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 60px;
+}
+
+.container .inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.container button {
+    border: none;
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 5px;
+    outline: none;
+    background-color: floralwhite;
+    cursor: pointer;
+}
+
+.inputs label {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.inputs input {
+    padding: 5px;
+    border-radius: 2px;
+    border: none;
+}
+
+.inputs .search-btn {
+    margin: 0 50px 0 10px;
+}
+
+.meals {
+    display: grid;
+    width: 80vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin: 10px auto;
+}
+
+.meal {
+    cursor: pointer;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+}
+
+.meal img {
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(189, 189, 189);
+    border-radius: 5px;
+}
+
+.meal-information {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease-in;
+    opacity: 0;
+}
+
+.meal:hover .meal-information {
+    opacity: 1;
+}
+
+.meal-data {
+    text-align: center;
+}
+
+.meal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.meal-info img {
+    height: 350px;
+    width: 350px;
+    border-radius: 5px;
+}
+
+.meal-info p {
+    max-width: 750px;
+    margin: 20px 30px;
+    font-size: 20px;
+}
+
+.ingredients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin-bottom: 50px;
+}
+
+.ingredients .ingredient {
+    display: flex;
+    background-color: rgb(219, 194, 130);
+    padding: 7px;
+    margin: 5px 8px;
+    border-radius: 15px;
+}
+
+
+@media (max-width: 800px) {
+    .meals {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .meals {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .meal {
+        height: 200px;
+        width: 200px;
+    }
+
+    .container .inputs {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .container button {
+        margin: 10px auto;
+    }
+
+    .inputs .search-btn {
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 500px) {
+    input[type='text'] {
+        width: 80%;
+    }
+
+    .meals {
+        grid-template-columns: 1fr;
+    }
+
+    .meal {
+        height: 300px;
+        width: 300px;
+    }
+}
